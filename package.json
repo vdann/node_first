@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/vdann/node_first/issues"
   },
-  "homepage": "https://github.com/vdann/node_first#readme"
+  "homepage": "https://github.com/vdann/node_first#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {}
 }

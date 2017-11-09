@@ -1,15 +1,14 @@
 // содежимое index.js
-const http = require('http');
+const express = require('express');
 
 const port = process.env.PORT || 3000;
 
-const requestHandler = (request, response) => {
-    console.log(request.url);
-    response.end('Hello Node.js Server! Серега гат)))');
-}
+const app = express();
+app.get('/', (req, res) => {
+    res.send('Hello from Express!')
+})
 
-const server = http.createServer(requestHandler)
-server.listen(port, (err) => {
+app.listen(port, (err) => {
     if (err) {
         console.log('something bad happened', err);
         return;
