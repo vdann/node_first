@@ -5,7 +5,17 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 app.get('/', (req, res) => {
-    res.send('Hello from Express!')
+    res.send('Hello from Express!');
+})
+
+app.get('/err', (req, res) => {
+    throw new Error('oops');
+})
+
+app.use((err, request, response, next) => {
+    // логирование ошибки, пока просто console.log
+    console.log(err);
+    response.status(500).send(err);
 })
 
 app.listen(port, (err) => {
